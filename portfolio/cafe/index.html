@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Зерно — кав'ярня | Концепт</title>
+<meta name="description" content="Концепт сайту кав'ярні: меню, акції, години роботи та замовлення в Telegram.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;600&display=swap">
+<style>
+:root{--bg:#f7efe6;--ink:#2b1a10;--mute:#6e5645;--ac:#b5651d;--card:#fffaf3;--line:#e4d3bf;--dk:#2b1a10;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b110b;--ink:#f4e6d6;--mute:#bfa58f;--ac:#e0924a;--card:#261811;--line:#41291b;--dk:#120a06}}
+:root[data-theme="dark"]{--bg:#1b110b;--ink:#f4e6d6;--mute:#bfa58f;--ac:#e0924a;--card:#261811;--line:#41291b;--dk:#120a06}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Karla,system-ui,sans-serif}
+h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.1;margin:0 0 .5em}
+h1{font-size:clamp(3rem,10vw,6rem)}h2{font-size:clamp(2rem,5vw,3rem)}h3{font-size:1.4rem}
+p{margin:0 0 1em;max-width:56ch}.w{max-width:1000px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .w{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font:400 1.5rem "DM Serif Display",serif}nav a{text-decoration:none;margin-left:20px;font-size:.95rem;color:var(--mute)}
+@media(max-width:700px){nav .m a:not(.btn){display:none}}
+.btn{display:inline-block;background:var(--ac);color:#fff!important;padding:14px 28px;border-radius:6px;text-decoration:none;font-weight:600;margin:6px 10px 6px 0}
+nav .btn{padding:7px 16px;margin:0 0 0 20px}.btn.o{background:none;color:var(--ink)!important;border:1.5px solid var(--ink)}
+a:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
+.hero{background:var(--dk);color:#f4e6d6;padding:90px 0 80px;position:relative;overflow:hidden}
+.hero p{color:#d6bfa8;font-size:1.15rem}.hero .btn.o{color:#f4e6d6!important;border-color:#f4e6d6}
+.cup{position:absolute;right:-30px;top:40px;width:340px;opacity:.16}
+@media(max-width:700px){.cup{width:240px;top:20px}}
+section{padding:68px 0}.alt{background:color-mix(in srgb,var(--ac) 9%,var(--bg))}
+.menu{display:grid;gap:0 50px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.menu div{display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.menu small{display:block;color:var(--mute);font-size:.88rem}.menu b{white-space:nowrap;color:var(--ac)}
+.menu h3{grid-column:1/-1;margin:26px 0 4px;font-size:1.5rem}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px}.card p{margin:0;color:var(--mute)}
+.card b{color:var(--ac);font-size:1.1rem}
+.hours{display:grid;gap:30px;grid-template-columns:1fr 1fr}@media(max-width:700px){.hours{grid-template-columns:1fr}}
+.hours p{margin:0 0 .4em}
+.end{background:var(--dk);color:#f4e6d6;text-align:center;border-radius:20px;padding:54px 22px}.end p{margin:0 auto 1.2em;color:#d6bfa8}
+footer{padding:28px 0 90px;text-align:center;color:var(--mute);font-size:.9rem}footer a{color:var(--ac)}
+.fab{display:none}@media(max-width:700px){.fab{display:block;position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom,0px));text-align:center;z-index:6;margin:0;box-shadow:0 8px 24px rgba(0,0,0,.3)}}
+</style></head><body>
+<nav><div class="w"><b>Зерно</b><div class="m"><a href="#menu">Меню</a><a href="#akcii">Акції</a><a href="#kontakty">Контакти</a><a class="btn" href="https://t.me/managerwesty">Замовити</a></div></div></nav>
+
+<header class="hero"><svg class="cup" viewBox="0 0 200 200" aria-hidden="true"><path d="M30 70h120v50a50 50 0 0 1-50 50h-20a50 50 0 0 1-50-50z M150 85h18a20 20 0 0 1 0 40h-22" fill="none" stroke="#f4e6d6" stroke-width="8" stroke-linejoin="round"/><path d="M70 20c-8 12 8 16 0 30M100 20c-8 12 8 16 0 30M130 20c-8 12 8 16 0 30" fill="none" stroke="#f4e6d6" stroke-width="6" stroke-linecap="round"/></svg>
+<div class="w"><h1>Кава, яка<br>починає день</h1>
+<p>Власне обсмаження, свіжа випічка й затишне місце в центрі міста. Замовте наперед і заберіть без черги.</p>
+<a class="btn" href="https://t.me/managerwesty">Замовити в Telegram</a><a class="btn o" href="#menu">Дивитися меню</a></div></header>
+
+<section id="menu"><div class="w"><h2>Меню</h2>
+<div class="menu">
+<h3>Кава</h3>
+<div><span>Еспресо<small>30 мл, класика</small></span><b>45 грн</b></div>
+<div><span>Американо<small>двічі еспресо з водою</small></span><b>55 грн</b></div>
+<div><span>Капучино<small>ніжна молочна пінка</small></span><b>75 грн</b></div>
+<div><span>Лате<small>м'який і молочний</small></span><b>80 грн</b></div>
+<div><span>Фільтр-кава<small>сезонні зерна</small></span><b>70 грн</b></div>
+<div><span>Раф<small>з ванільним цукром</small></span><b>95 грн</b></div>
+<h3>Випічка</h3>
+<div><span>Круасан<small>мигдалевий</small></span><b>65 грн</b></div>
+<div><span>Чізкейк<small>домашній</small></span><b>110 грн</b></div>
+<div><span>Брауні<small>з шоколадом</small></span><b>70 грн</b></div>
+<div><span>Сирники<small>зі сметаною</small></span><b>95 грн</b></div>
+</div><p style="margin-top:16px;color:var(--mute);font-size:.9rem">Ціни наведені як приклад у концепті.</p></div></section>
+
+<section id="akcii" class="alt"><div class="w"><h2>Акції</h2>
+<div class="grid">
+<div class="card"><h3>Ранкова пара</h3><p>З 8:00 до 10:00 кава й круасан за <b>110 грн</b>.</p></div>
+<div class="card"><h3>Кожна 7-ма кава</h3><p>Безкоштовно для постійних гостей.</p></div>
+<div class="card"><h3>З собою у свій стакан</h3><p>Знижка <b>10 грн</b> на будь-який напій.</p></div>
+</div></div></section>
+
+<section id="kontakty"><div class="w"><div class="hours">
+<div><h2>Години роботи</h2><p>Пн–Пт: 8:00–21:00</p><p>Сб–Нд: 9:00–22:00</p><p style="color:var(--mute)">Адреса: центр міста (вказати у фінальній версії)</p></div>
+<div class="end" style="padding:36px 22px"><h3>Замовте наперед</h3><p>Напишіть у Telegram, і напій буде готовий до вашого приходу.</p><a class="btn" href="https://t.me/managerwesty">Написати в Telegram</a></div>
+</div></div></section>
+<footer><div class="w">Концепт-проєкт від <a href="https://t.me/managerwesty">Westy</a>. <a href="../">← До портфоліо</a></div></footer>
+<a class="btn fab" href="https://t.me/managerwesty">Замовити в Telegram</a>
+</body></html>

@@ -1,0 +1,170 @@
+{% load static %}
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171916">
+  <meta name="description" content="{{ profile.name }} — {{ profile.role }}. Портфоліо вебпроєктів і цифрових рішень.">
+  <title>{{ profile.name }} — {{ profile.role }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'portfolio/site.css' %}">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="На початок">
+        <span class="brand-mark">W<span>.</span></span>
+        <span class="brand-name">{{ profile.name }}<small>CREATIVE DEVELOPER</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="nav-links" aria-label="Головна навігація">
+        <a href="#work">Проєкти <span>({{ project_count|stringformat:"02d" }})</span></a>
+        <a href="#about">Про мене</a>
+        <a href="#contact">Контакт</a>
+        {% if request.user.is_superuser %}<a class="nav-manage" href="{% url 'admin:index' %}">Керувати ↗</a>{% endif %}
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-wrap">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="status-dot"></span>{{ profile.availability }}</div>
+          <p class="hero-kicker">ПОРТФОЛІО · {{ profile.role|upper }}</p>
+          <h1>{{ profile.headline|linebreaksbr }}</h1>
+          <p class="hero-lead">{{ profile.bio }}</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Дивитися проєкти <span>↘</span></a>
+            <a class="text-link" href="https://t.me/{{ profile.telegram_username|cut:'@' }}" target="_blank" rel="noopener noreferrer">Зв’язатися <span>↗</span></a>
+          </div>
+          <div class="hero-footnote"><span>ЗАРАЗ У ФОКУСІ</span><span>Дизайн · Розробка · Результат</span></div>
+        </div>
+
+        <div class="hero-art reveal" aria-label="Графічна композиція портфоліо">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-sticker">ІДЕЯ<br>→ РЕАЛІЗАЦІЯ</div>
+          <div class="art-core">
+            <span class="core-top">DIGITAL<br>CRAFT</span>
+            <span class="core-letter">W</span>
+            <span class="core-bottom">ЗРОБЛЕНО З ХАРАКТЕРОМ</span>
+          </div>
+          <span class="art-cross cross-one">✳</span>
+          <span class="art-cross cross-two">✳</span>
+          <span class="art-index">01 / 04</span>
+          <span class="art-caption">DESIGN THAT<br>DOES THE WORK</span>
+        </div>
+
+        <div class="hero-scroll"><span></span> ПРОКРУТИ ВНИЗ</div>
+      </section>
+
+      <section class="ticker" aria-label="Спеціалізація">
+        <div class="ticker-track">
+          <span>ВЕБРОЗРОБКА</span><i>✳</i><span>КРЕАТИВНІ ІДЕЇ</span><i>✳</i><span>ЦИФРОВИЙ ДИЗАЙН</span><i>✳</i><span>ВЕБРОЗРОБКА</span><i>✳</i><span>КРЕАТИВНІ ІДЕЇ</span><i>✳</i><span>ЦИФРОВИЙ ДИЗАЙН</span><i>✳</i>
+        </div>
+      </section>
+
+      <section class="work section-wrap" id="work">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow"><span class="section-number">01</span> ВИБРАНІ РОБОТИ</p>
+            <h2>Не просто красиво.<br><span>Працює на результат.</span></h2>
+          </div>
+          <p class="section-note">Кожен проєкт — це задача,<br>ідея та рішення, яке має сенс.</p>
+        </div>
+
+        {% if projects %}
+          <div class="filter-row reveal" aria-label="Фільтри проєктів">
+            <button class="filter-chip is-active" type="button" data-filter="all">Усі <span>{{ project_count }}</span></button>
+            {% for category in categories %}
+              <button class="filter-chip" type="button" data-filter="{{ category|slugify }}">{{ category }}</button>
+            {% endfor %}
+            <label class="project-search"><span>⌕</span><input type="search" placeholder="Знайти проєкт..." aria-label="Пошук проєктів"></label>
+          </div>
+          <div class="project-grid">
+            {% for project in projects %}
+              <article class="project-card reveal" data-category="{{ project.category|slugify }}" data-search="{{ project.title|lower }} {{ project.summary|lower }} {{ project.technologies|lower }}">
+                <a class="project-visual {% cycle 'visual-lime' 'visual-lilac' 'visual-orange' 'visual-blue' %}" href="{{ project.project_url|default:'#contact' }}" {% if project.project_url %}target="_blank" rel="noopener noreferrer"{% endif %} aria-label="Відкрити проєкт {{ project.title }}">
+                  {% if project.image_url %}
+                    <img src="{{ project.image_url }}" alt="{{ project.title }}" loading="lazy">
+                  {% else %}
+                    <div class="visual-placeholder">
+                      <span class="placeholder-orbit"></span>
+                      <span class="placeholder-label">{{ project.category|upper }}</span>
+                      <span class="placeholder-title">{{ project.title|truncatechars:22 }}</span>
+                      <span class="placeholder-arrow">↗</span>
+                    </div>
+                  {% endif %}
+                  {% if project.featured %}<span class="featured-tag">✳ ВИБРАНЕ</span>{% endif %}
+                  <span class="visual-open">↗</span>
+                </a>
+                <div class="project-info">
+                  <div class="project-title-line"><h3>{{ project.title }}</h3><span>{{ project.year|default:"—" }}</span></div>
+                  <p>{{ project.summary }}</p>
+                  <div class="project-meta"><span>{{ project.category }}</span><div>{% for technology in project.technology_list %}<i>{{ technology }}</i>{% endfor %}</div></div>
+                  {% if project.description %}<details class="project-details"><summary>Детальніше про проєкт</summary><p>{{ project.description }}</p></details>{% endif %}
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+          <p class="no-results" hidden>Нічого не знайдено. Спробуй інший запит.</p>
+        {% else %}
+          <div class="empty-projects reveal">
+            <div class="empty-symbol">✳</div>
+              <div><p class="eyebrow">ПЕРШИЙ ПРОЄКТ — ЗА ТОБОЮ</p><h3>Тут скоро будуть<br>твої найкращі роботи.</h3>
+                {% if request.user.is_superuser %}<p>Додай проєкт через панель керування — він одразу з’явиться на сайті.</p>
+                {% else %}<p>Портфоліо поповнюється. А поки — обговоримо твою ідею?</p>{% endif %}
+              </div>
+              {% if request.user.is_superuser %}
+              <a class="button button-outline" href="{% url 'admin:portfolio_project_add' %}">Додати проєкт <span>↗</span></a>
+            {% else %}
+              <a class="button button-outline" href="https://t.me/{{ profile.telegram_username|cut:'@' }}" target="_blank" rel="noopener noreferrer">Обговорити проєкт <span>↗</span></a>
+            {% endif %}
+          </div>
+        {% endif %}
+      </section>
+
+      <section class="about section-wrap" id="about">
+        <div class="about-top reveal">
+          <p class="eyebrow"><span class="section-number">02</span> ТРОХИ ПРО МЕНЕ</p>
+          <span class="about-stamp">З ХАРАКТЕРОМ<br>І ДО ДЕТАЛЕЙ ✳</span>
+        </div>
+        <div class="about-content">
+          <h2 class="about-quote reveal">«Найкращий дизайн —<br>це коли <span>все на своєму місці.</span>»</h2>
+          <div class="about-bottom reveal">
+            <p>{{ profile.bio }}</p>
+            <div class="stat-block"><strong>{{ profile.years_experience }}<sup>+</sup></strong><span>РОКИ ДОСВІДУ<br>У ЦИФРОВИХ ПРОЄКТАХ</span></div>
+            <div class="stat-block"><strong>{{ project_count|stringformat:"02d" }}</strong><span>ПРОЄКТІВ<br>У ПОРТФОЛІО</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-wrap" id="contact">
+        <div class="contact-card reveal">
+          <div class="contact-noise"></div>
+          <div class="contact-top"><p class="eyebrow"><span class="status-dot"></span> Є ІДЕЯ? ДАВАЙ ОБГОВОРИМО</p><span class="contact-index">03 — CONTACT</span></div>
+          <h2>Зробімо щось<br><span>неймовірне.</span></h2>
+          <p class="contact-description">Від першої думки до готового запуску — я на зв’язку.</p>
+          <div class="contact-actions">
+            <a class="button button-dark" href="https://t.me/{{ profile.telegram_username|cut:'@' }}" target="_blank" rel="noopener noreferrer">Написати в Telegram <span>↗</span></a>
+            <a class="contact-phone" href="tel:{{ profile.phone }}">{{ profile.phone }}</a>
+            {% if profile.email %}<a class="contact-phone" href="mailto:{{ profile.email }}">{{ profile.email }}</a>{% endif %}
+          </div>
+          <span class="contact-deco">✳</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer section-wrap">
+      <a class="brand" href="#top"><span class="brand-mark">W<span>.</span></span><span class="brand-name">{{ profile.name }}<small>ЗРОБЛЕНО З ІДЕЄЮ ✳</small></span></a>
+      <span>© {% now "Y" %} {{ profile.name }}. УСІ ПРАВА ЗАХИЩЕНІ.</span>
+      <a href="#top">НА ПОЧАТОК ↑</a>
+    </footer>
+  </div>
+  <script src="{% static 'portfolio/site.js' %}" defer></script>
+</body>
+</html>

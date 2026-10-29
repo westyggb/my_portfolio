@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Westy — веб-розробник | Сайти-візитки, лендінги, інтернет-магазини</title>
+<meta name="description" content="Westy — веб-розробник з 2 роками досвіду та 7+ реалізованими сайтами. Сайти-візитки, лендінги та адаптивні сайти під ключ. Telegram: @managerwesty">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;600&display=swap">
+<style>
+:root{--bg:#f4f2fb;--ink:#161233;--mute:#5d5a7a;--card:#fff;--line:#dedaf0;--ac:#4b3df2;--hot:#ff6b3d;--on:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0d22;--ink:#f1eefc;--mute:#a9a5c6;--card:#181532;--line:#2e2a52;--ac:#8e84ff;--hot:#ff8a63;--on:#0f0d22}}
+:root[data-theme="dark"]{--bg:#0f0d22;--ink:#f1eefc;--mute:#a9a5c6;--card:#181532;--line:#2e2a52;--ac:#8e84ff;--hot:#ff8a63;--on:#0f0d22}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Manrope,system-ui,sans-serif}
+h1,h2,h3{font-family:Unbounded,system-ui,sans-serif;font-weight:700;line-height:1.1;margin:0 0 .6em}
+h1{font-size:clamp(2.4rem,8vw,5rem);letter-spacing:-.03em}h2{font-size:clamp(1.7rem,4.5vw,2.6rem);letter-spacing:-.02em}h3{font-size:1.15rem;font-weight:500}
+p{margin:0 0 1em;max-width:58ch}a{color:inherit}
+.w{max-width:1080px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .w{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font-family:Unbounded,sans-serif;font-size:1.05rem}
+nav a{text-decoration:none;margin-left:22px;font-size:.95rem;color:var(--mute)}nav a:hover{color:var(--ac)}
+@media(max-width:700px){nav .m a:not(.cta){display:none}}
+.cta{background:var(--ac);color:var(--on)!important;padding:9px 18px;border-radius:999px;font-weight:600}
+.hero{padding:80px 0 60px}
+.hero h1 span{background:linear-gradient(90deg,var(--ac),var(--hot));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.2rem;color:var(--mute)}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:15px 28px;border-radius:14px;text-decoration:none;font-weight:600;margin:6px 10px 6px 0}
+.btn.o{background:none;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.t{background:var(--ac);color:var(--on)}
+a:focus-visible{outline:3px solid var(--hot);outline-offset:3px}
+.stats{display:flex;flex-wrap:wrap;gap:34px;margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
+.stats b{display:block;font:700 2rem Unbounded,sans-serif;color:var(--ac)}.stats span{color:var(--mute);font-size:.95rem}
+section{padding:70px 0}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(310px,1fr))}
+.pr{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s}
+.pr:hover{transform:translateY(-4px)}
+.shot{height:190px;padding:18px 18px 0;background:var(--g)}
+.win{background:var(--card);border-radius:10px 10px 0 0;height:100%;padding:10px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.win i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--line);margin-right:4px}
+.win .h{height:46px;border-radius:6px;background:var(--g);margin:8px 0 8px}
+.win .l{height:7px;border-radius:4px;background:var(--line);margin-bottom:6px;width:80%}.win .l.s{width:50%}
+.pb{padding:22px;display:flex;flex-direction:column;flex:1}
+.pb p{color:var(--mute);font-size:.97rem;margin:0 0 14px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tags span{font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:2px 11px;color:var(--mute)}
+.st{margin-top:auto;font-weight:600;font-size:.95rem}.st a{color:var(--ac)}
+.st em{font-style:normal;color:var(--hot)}
+.note{color:var(--mute);font-size:.9rem;margin-top:20px}
+.alt{background:color-mix(in srgb,var(--ac) 8%,var(--bg))}
+.sk{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.sk div{padding:22px;border-left:3px solid var(--hot);background:var(--card);border-radius:0 14px 14px 0}
+.sk p{margin:0;color:var(--mute);font-size:.97rem}
+.end{background:var(--ink);color:var(--bg);text-align:center;border-radius:28px;padding:56px 24px}
+.end p{margin:0 auto 1.4em;color:color-mix(in srgb,var(--bg) 75%,transparent)}
+.end .btn{background:var(--hot);color:#fff}
+footer{padding:30px 0 90px;text-align:center;color:var(--mute);font-size:.9rem}
+.fab{display:none}
+@media(max-width:700px){.fab{display:block;position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:6;text-align:center;margin:0;background:var(--ac);color:var(--on);box-shadow:0 8px 24px rgba(0,0,0,.3)}}
+</style>
+</head>
+<body>
+<nav><div class="w"><b>westy.</b><div class="m"><a href="#roboty">Роботи</a><a href="#posluhy">Послуги</a><a href="#kontakty">Контакти</a><a class="cta" href="https://t.me/managerwesty">Написати</a></div></div></nav>
+
+<header class="hero"><div class="w">
+<h1>Роблю сайти, які <span>приносять клієнтів</span></h1>
+<p class="lead">Привіт, я Westy, веб-розробник. Створюю сучасні адаптивні сайти-візитки, лендінги та сайти для бізнесу. Швидко, охайно й з унікальним дизайном.</p>
+<a class="btn t" href="https://t.me/managerwesty">Замовити сайт</a>
+<a class="btn o" href="#roboty">Мої роботи</a>
+<div class="stats"><div><b>2 роки</b><span>досвіду</span></div><div><b>7+</b><span>реалізованих сайтів</span></div><div><b>24/7</b><span>сайт онлайн</span></div><div><b>100%</b><span>адаптив під телефон</span></div></div>
+</div></header>
+
+<section id="roboty" class="alt"><div class="w">
+<h2>Мої роботи</h2>
+<div class="grid">
+
+<article class="pr"><div class="shot" style="--g:linear-gradient(135deg,#f6c453,#e8738a)"><div class="win"><i></i><i></i><i></i><div class="h"></div><div class="l"></div><div class="l s"></div></div></div>
+<div class="pb"><h3>Сайт-візитка психолога</h3><p>Односторінковий сайт для психолога та біоенергетика: про спеціаліста, послуги, етапи роботи, питання й відповіді. Теплий дизайн, автоматична темна тема, SEO-розмітка для локального пошуку.</p>
+<div class="tags"><span>HTML</span><span>CSS</span><span>SEO</span><span>Адаптив</span></div>
+<div class="st"><a href="https://westyggb.github.io/psigolog1/" target="_blank" rel="noopener">Відкрити сайт</a></div></div></article>
+
+<article class="pr"><div class="shot" style="--g:linear-gradient(135deg,#2c2c34,#8a7a6a)"><div class="win"><i></i><i></i><i></i><div class="h"></div><div class="l"></div><div class="l s"></div></div></div>
+<div class="pb"><h3>Сайт для фотографа</h3><p>Портфоліо фотографа з галереєю робіт і блоком контактів. Акцент на фото, мінімум зайвого.</p>
+<div class="tags"><span>HTML</span><span>CSS</span><span>Галерея</span></div>
+<div class="st"><em>У розробці</em> · <a href="https://westyggb.github.io/zrazok/buchkovska-photo/#portfolio" target="_blank" rel="noopener">Переглянути</a></div></div></article>
+
+<article class="pr"><div class="shot" style="--g:linear-gradient(135deg,#7a4a2b,#d9a066)"><div class="win"><i></i><i></i><i></i><div class="h"></div><div class="l"></div><div class="l s"></div></div></div>
+<div class="pb"><h3>Лендінг кав'ярні</h3><p>Меню з цінами, акції, години роботи та замовлення в Telegram одним натисканням. Теплий дизайн для локального закладу.</p>
+<div class="tags"><span>Лендінг</span><span>Меню</span><span>Концепт</span></div>
+<div class="st"><a href="cafe/">Відкрити сайт</a> · <em>концепт</em></div></div></article>
+
+<article class="pr"><div class="shot" style="--g:linear-gradient(135deg,#1f9d8a,#7fd6c2)"><div class="win"><i></i><i></i><i></i><div class="h"></div><div class="l"></div><div class="l s"></div></div></div>
+<div class="pb"><h3>Сайт стоматології</h3><p>Послуги й ціни, лікарі, етапи візиту та запис на прийом у Telegram. Чистий стиль, який викликає довіру.</p>
+<div class="tags"><span>Бізнес-сайт</span><span>Запис на прийом</span><span>Концепт</span></div>
+<div class="st"><a href="dental/">Відкрити сайт</a> · <em>концепт</em></div></div></article>
+
+<article class="pr"><div class="shot" style="--g:linear-gradient(135deg,#ff6b3d,#ffb36b)"><div class="win"><i></i><i></i><i></i><div class="h"></div><div class="l"></div><div class="l s"></div></div></div>
+<div class="pb"><h3>Фітнес-студія</h3><p>Концепт: розклад занять, тренери, абонементи й енергійний яскравий дизайн.</p>
+<div class="tags"><span>Розклад</span><span>Абонементи</span><span>Концепт</span></div>
+<div class="st"><em>Концепт-проєкт</em></div></div></article>
+
+<article class="pr"><div class="shot" style="--g:linear-gradient(135deg,#4b3df2,#8e84ff)"><div class="win"><i></i><i></i><i></i><div class="h"></div><div class="l"></div><div class="l s"></div></div></div>
+<div class="pb"><h3>Мінімалістичний магазин</h3><p>Концепт: каталог, картка товару та кошик. Чистий інтерфейс і швидке оформлення замовлення.</p>
+<div class="tags"><span>Магазин</span><span>Каталог</span><span>Концепт</span></div>
+<div class="st"><em>Концепт-проєкт</em></div></div></article>
+
+</div>
+<p class="note">Більше прикладів та деталі проєктів надішлю в Telegram.</p>
+</div></section>
+
+<section id="posluhy"><div class="w">
+<h2>Що я роблю</h2>
+<div class="sk">
+<div><h3>Сайти-візитки</h3><p>Коротко про вас або бізнес: послуги, контакти, соцмережі.</p></div>
+<div><h3>Лендінги</h3><p>Одна сторінка, яка веде до заявки чи дзвінка.</p></div>
+<div><h3>Адаптив і швидкість</h3><p>Однаково добре на телефоні, планшеті та комп'ютері.</p></div>
+<div><h3>Базове SEO</h3><p>Правильні теги й розмітка, щоб сайт знаходили в пошуку.</p></div>
+<div><h3>Хостинг 24/7</h3><p>Допомагаю розмістити сайт, щоб він працював без перерв.</p></div>
+<div><h3>Підтримка</h3><p>Правки, оновлення тексту й нові розділи після запуску.</p></div>
+</div></div></section>
+
+<section id="kontakty"><div class="w"><div class="end">
+<h2>Обговоримо ваш сайт?</h2>
+<p>Напишіть мені в Telegram, коротко опишіть задачу, і я скажу терміни та вартість.</p>
+<a class="btn" href="https://t.me/managerwesty">@managerwesty</a>
+</div></div></section>
+
+<footer><div class="w">© 2026 Westy. Веб-розробка.</div></footer>
+<a class="btn fab" href="https://t.me/managerwesty">Написати в Telegram</a>
+</body>
+</html>

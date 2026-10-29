@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Усмішка — стоматологія | Концепт</title>
+<meta name="description" content="Концепт сайту стоматології: послуги, лікарі, ціни та запис на прийом.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Inter:wght@400;600&display=swap">
+<style>
+:root{--bg:#f3fbf9;--ink:#0e2f2c;--mute:#4f6f6b;--ac:#12a58f;--ac2:#0b7d6c;--card:#fff;--line:#d3ebe6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1d1b;--ink:#e6f6f3;--mute:#9bbdb8;--ac:#2fd0b8;--ac2:#2fd0b8;--card:#11302d;--line:#1d4a45}}
+:root[data-theme="dark"]{--bg:#0a1d1b;--ink:#e6f6f3;--mute:#9bbdb8;--ac:#2fd0b8;--ac2:#2fd0b8;--card:#11302d;--line:#1d4a45}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.12;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,7vw,4.2rem)}h2{font-size:clamp(1.8rem,4.5vw,2.6rem)}h3{font-size:1.3rem}
+p{margin:0 0 1em;max-width:58ch}.w{max-width:1040px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .w{display:flex;justify-content:space-between;align-items:center;height:62px}
+nav b{font:700 1.3rem Fraunces,serif;color:var(--ac2)}nav a{text-decoration:none;margin-left:20px;font-size:.95rem;color:var(--mute)}
+@media(max-width:700px){nav .m a:not(.btn){display:none}}
+.btn{display:inline-block;background:var(--ac);color:#fff!important;padding:14px 28px;border-radius:999px;text-decoration:none;font-weight:600;margin:6px 10px 6px 0}
+nav .btn{padding:8px 18px;margin:0 0 0 20px}.btn.o{background:none;color:var(--ink)!important;border:1.5px solid var(--ac)}
+a:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;max-width:1040px;margin:0 auto;padding:64px 22px}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.tooth{max-width:200px;order:-1}}
+.lead{font-size:1.15rem;color:var(--mute)}.tooth{width:100%}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px;color:var(--mute);font-size:.95rem}.facts b{display:block;font:700 1.7rem Fraunces,serif;color:var(--ac2)}
+section{padding:68px 0}.alt{background:color-mix(in srgb,var(--ac) 8%,var(--bg))}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.card p{margin:0 0 .6em;color:var(--mute);font-size:.96rem}.pr{font-weight:600;color:var(--ac2)}
+.docs .card{text-align:center}.av{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,var(--ac),#8ee3d3);margin:0 auto 14px}
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));counter-reset:s}
+.steps li{counter-increment:s;padding-top:52px;position:relative}.steps li::before{content:counter(s);position:absolute;top:0;width:40px;height:40px;border-radius:50%;background:var(--ac);color:#fff;font:700 1.2rem Fraunces,serif;display:grid;place-items:center}
+.steps span{display:block;color:var(--mute);font-size:.96rem}
+details{border-bottom:1px solid var(--line);padding:16px 0}summary{cursor:pointer;font-weight:600}details p{margin:.6em 0 0;color:var(--mute)}
+.end{background:var(--ac2);color:#fff;border-radius:26px;text-align:center;padding:54px 22px}.end p{margin:0 auto 1.2em}.end .btn{background:#fff;color:#0b7d6c!important}
+.back{display:inline-block;margin:0;font-size:.9rem;color:var(--mute)}
+footer{padding:28px 0 90px;text-align:center;color:var(--mute);font-size:.9rem}footer a{color:var(--ac2)}
+.fab{display:none}@media(max-width:700px){.fab{display:block;position:fixed;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom,0px));text-align:center;z-index:6;margin:0;box-shadow:0 8px 24px rgba(0,0,0,.25)}}
+</style></head><body>
+<nav><div class="w"><b>Усмішка</b><div class="m"><a href="#posluhy">Послуги</a><a href="#likari">Лікарі</a><a href="#faq">Питання</a><a class="btn" href="https://t.me/managerwesty">Записатися</a></div></div></nav>
+
+<header class="hero"><div>
+<h1>Здорова усмішка без страху і болю</h1>
+<p class="lead">Сучасна стоматологія для всієї родини: лікування, гігієна, відбілювання та імплантація. Зручний запис за одну хвилину.</p>
+<a class="btn" href="https://t.me/managerwesty">Записатися на прийом</a><a class="btn o" href="#posluhy">Ціни на послуги</a>
+<div class="facts"><div><b>12 років</b>на ринку</div><div><b>5000+</b>пацієнтів</div><div><b>Гарантія</b>на лікування</div></div>
+</div>
+<svg class="tooth" viewBox="0 0 200 220" aria-hidden="true"><path d="M100 24c-22-18-62-8-62 36 0 24 10 36 14 62 3 22 6 52 22 52 14 0 12-40 26-40s12 40 26 40c16 0 19-30 22-52 4-26 14-38 14-62 0-44-40-54-62-36z" fill="var(--ac)" opacity=".18" stroke="var(--ac)" stroke-width="6" stroke-linejoin="round"/><path d="M70 60c6-8 16-10 24-6" stroke="var(--ac)" stroke-width="6" stroke-linecap="round" fill="none"/></svg>
+</header>
+
+<section id="posluhy" class="alt"><div class="w"><h2>Послуги та ціни</h2>
+<div class="grid">
+<div class="card"><h3>Консультація</h3><p>Огляд, план лікування, розрахунок вартості.</p><span class="pr">безкоштовно</span></div>
+<div class="card"><h3>Лікування карієсу</h3><p>Сучасні матеріали, без болю.</p><span class="pr">від 900 грн</span></div>
+<div class="card"><h3>Професійна гігієна</h3><p>Видалення нальоту й каменю, полірування.</p><span class="pr">від 1200 грн</span></div>
+<div class="card"><h3>Відбілювання</h3><p>Світліша усмішка за одну процедуру.</p><span class="pr">від 3500 грн</span></div>
+<div class="card"><h3>Імплантація</h3><p>Відновлення зубів під ключ.</p><span class="pr">від 18000 грн</span></div>
+<div class="card"><h3>Дитяча стоматологія</h3><p>М'який підхід, без стресу для дитини.</p><span class="pr">від 700 грн</span></div>
+</div><p style="margin-top:16px;color:var(--mute);font-size:.9rem">Ціни наведені як приклад у концепті.</p></div></section>
+
+<section id="likari"><div class="w"><h2>Наші лікарі</h2>
+<div class="grid docs">
+<div class="card"><div class="av"></div><h3>Лікар-терапевт</h3><p>Лікування та естетична реставрація зубів.</p></div>
+<div class="card"><div class="av"></div><h3>Лікар-хірург</h3><p>Імплантація та складні видалення.</p></div>
+<div class="card"><div class="av"></div><h3>Дитячий лікар</h3><p>Перший візит без страху.</p></div>
+</div></div></section>
+
+<section class="alt"><div class="w"><h2>Як проходить візит</h2>
+<ol class="steps"><li><b>Запис</b><span>Пишете нам у Telegram.</span></li><li><b>Огляд</b><span>Лікар складає план лікування.</span></li><li><b>Лікування</b><span>Працюємо комфортно, з анестезією.</span></li><li><b>Контроль</b><span>Рекомендації та нагадування про візит.</span></li></ol></div></section>
+
+<section id="faq"><div class="w"><h2>Питання та відповіді</h2>
+<details><summary>Чи боляче лікувати зуби?</summary><p>Ми використовуємо сучасну анестезію, тому процедури проходять комфортно.</p></details>
+<details><summary>Скільки триває візит?</summary><p>Консультація займає близько 30 хвилин, лікування залежить від складності.</p></details>
+<details><summary>Чи є гарантія?</summary><p>Так, на пломби та протезування діє гарантія.</p></details>
+</div></section>
+
+<section><div class="w"><div class="end"><h2>Запишіться на огляд сьогодні</h2><p>Напишіть нам, і ми підберемо зручний час.</p><a class="btn" href="https://t.me/managerwesty">Записатися в Telegram</a></div></div></section>
+<footer><div class="w">Концепт-проєкт від <a href="https://t.me/managerwesty">Westy</a>. <a class="back" href="../">← До портфоліо</a></div></footer>
+<a class="btn fab" href="https://t.me/managerwesty">Записатися</a>
+</body></html>
